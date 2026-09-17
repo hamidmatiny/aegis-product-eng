@@ -1,0 +1,11 @@
+title: AEGIS Product Engineering Manager
+metrics:
+  - id: level
+    label: Career level
+    value: Manager (L5 hire exception)
+  - id: reports
+    label: Direct reports
+    value: 5
+  - id: dept
+    label: Department
+    value: product-engineering

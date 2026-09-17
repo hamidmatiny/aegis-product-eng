@@ -1,0 +1,20 @@
+{
+  "phase": "hire",
+  "steps": [
+    {
+      "id": "omniroute",
+      "title": "Confirm mid-cost OmniRoute auth",
+      "done": false
+    },
+    {
+      "id": "team",
+      "title": "Confirm five reports + reports-to tags",
+      "done": false
+    },
+    {
+      "id": "slack",
+      "title": "Slack channel bound; Hamid invited as head-of-dept",
+      "done": false
+    }
+  ]
+}

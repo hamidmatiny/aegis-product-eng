@@ -1,0 +1,4 @@
+.env
+.mcp.json
+.credentials.enc
+.DS_Store

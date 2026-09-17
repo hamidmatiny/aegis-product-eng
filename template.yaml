@@ -1,0 +1,32 @@
+name: aegis-product-eng
+display_name: AEGIS Product Engineering Manager
+description: |
+  Manager of dept-product-engineering (Phase 1 enforcer component owners).
+  Reports to aegis-ceo. Deliberate Manager-tier hire (structural span-of-control
+  exception 2026-09-17) — not an organic SE-track promotion.
+resources:
+  cpu: "2"
+  memory: "4g"
+plugins:
+  marketplaces:
+    - name: abilityai
+      source: abilityai/abilities
+  installed:
+    - agent-dev@abilityai
+    - trinity@abilityai
+    - utilities@abilityai
+credentials:
+  env_file: []
+schedules:
+  - name: Weekly team review
+    cron: "0 10 * * 1"
+    timezone: UTC
+    message: "Run /review-team on Product Engineering specialists. Evidence-only; no fabricated readiness."
+    purpose: Manager cadence
+    enabled: false
+  - name: Update dashboard
+    cron: "0 */6 * * *"
+    timezone: UTC
+    message: "Run /update-dashboard."
+    purpose: Snapshot
+    enabled: false
