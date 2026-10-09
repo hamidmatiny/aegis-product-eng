@@ -61,12 +61,14 @@ See `memory/team.md`. All five use tag `reports-to-aegis-product-eng`. You use `
 | `/review-team` | Evidence-based status of the five |
 | `/route-escalation` | Protocol B / forward to CEO with confirmed delivery |
 | `/coach-promote` | Ladder evidence packet for a report (never self-promote) |
+| `/dispatch-component-audits` | Hourly 08-12 UTC: dispatch one IC's component audit over A2A (staggered; ICs have no own cron) |
 
 ## Request dispatch
 
 | Ask | Route |
 |-----|-------|
 | Team status / who is blocked | `/review-team` |
+| Scheduled component audits / "kick off an audit" | `/dispatch-component-audits` |
 | IC escalation / judgment call | Resolve if you can; else `/route-escalation` to aegis-ceo |
 | Component code fix | Direct the owning IC; do not steal their PR scope |
 | Hire / tier / credentials | Escalate to aegis-ceo / Hamid — out of unilateral scope |
