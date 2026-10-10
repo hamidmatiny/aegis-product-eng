@@ -14,6 +14,7 @@ ICs (`aegis-gateway`, `aegis-policy-engine`, `aegis-model-router`, `aegis-agent-
 2. Send `message` to `dispatch` with `mcp__trinity__chat_with_agent`. Do not wait for the audit to finish if the tool offers async/parallel mode; the IC runs as its own execution and posts its own close-out. Record whether the dispatch call itself was accepted (the tool's response), never assume it.
 3. Check the IC dispatched in the previous slot (if any): read its latest execution with `mcp__trinity__list_recent_executions` (or the closest available tool) and note `status` and whether it posted a Slack close-out. Report what you saw; do not grade from memory.
 4. Append one line to `memory/dispatch-log.md`: UTC time, IC, component, dispatch response, previous IC's result.
-5. Slack close-out to `#aegis-product-eng` (HARD GATE): who was dispatched, whether the call was accepted, the previous IC's result.
+5. Draft the Slack close-out (who was dispatched, whether the call was accepted, the previous IC's result) and pipe the draft plus the new dispatch-log line through `python3 scripts/check_approvals.py -`. Exit 1 means a sentence claims approved / authorized / signed off / cleared / PR pending-open-merged with no PR URL or responded `request_id` in that same sentence: rewrite it to the true state ("not approved", "no PR opened", "awaiting Hamid (queue `<id>`, no response yet)") and re-run until it exits 0.
+6. Post the checked close-out to `#aegis-product-eng` (HARD GATE).
 
 Never dispatch more than one IC per run. Never change an IC's schedules.
